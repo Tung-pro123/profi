@@ -1,0 +1,212 @@
+/* LƯU Ý: để mới vô làm trang web 1 cách độc lập thì chúng ta cần
+reset css để bỏ những cái thuộc tính mặc định mà mới vô css nó
+cung cấp */
+/* cách làm: */
+* {
+  /* trong th này chỉ có reset 2 cái này còn có rất nhiều sau này
+    sẽ học sau */
+  padding: 0;
+  margin: 0;
+  /* sẽ có TH chữ nó bị căng quá và dãn quá dẫn tới bể ảnh hưởng đến
+    nội dung vì thế ta cần sủ dụng hàm dưới */
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  /* để cân căn giữa phần tử */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+body {
+  /*  trang web kiếm màu pha: background linear gradient  */
+  background: #05c302;
+  background: linear-gradient(
+    126deg,
+    rgba(60, 180, 58, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 243, 69, 1) 100%
+  );
+  /* sau khi copy xong sài lệnh này để nó ko chia các component màu 
+ muốn biết nó ntn thì bỏ lệnh dưới*/
+  /* nó có nghĩa là full màn hình chiều cao */
+  min-height: 100vh;
+  /* còn full chiều rộng là */
+  /* min-width: 100vw; */
+  /* làm các chữ thành màu trắng */
+  color: white;
+}
+.logo {
+  font-size: 40px;
+  /* làm bước này để tạo màu cho chữ nhma sẽ có lỗi nó làm màu cho
+  cái background chứ ko phải chứ */
+  background: linear-gradient(to right, #9932cc, #ff69b4);
+  /* Cần thêm 2 bước để làm màu cho chữ */
+  background-clip: text;
+  color: transparent;
+  font-weight: 550px;
+}
+/* -----------------------------------------------Header------------------------------------------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: PINK; */
+  align-items: center;
+}
+.navigation {
+  display: flex;
+
+  /* làm mất dấu chấm ở thẻ ul */
+  list-style: none;
+  gap: 25px;
+}
+ul a {
+  /* giúp xóa cái dấu gạch chân của thẻ a */
+  text-decoration: none;
+  /* làm chữ ở thẻ a thành màu trắng bởi vì thẻ a nó có độ ưu tiên hơn */
+  color: white;
+}
+.button {
+  /* tạo hình cho button */
+  padding: 12px 25px;
+  border-radius: 50px;
+  /* xóa cái khung mặc định của button */
+  border: none;
+  outline: none;
+  background-color: rgb(211, 139, 4);
+  color: white;
+  /* chức năng khi đặt con trỏ vào người dùng có thể biết là chỗ đó 
+  click được  */
+  cursor: pointer;
+  /* Dùng để khi trỏ vào nó sẽ làm hiệu ứng chậm lại cho cái nút đó
+   như là: all là chỉ toàn bộ button, trỏ vào hiệu ứng chậm(ease-in) lại 0.3s*/
+  transition: all 0.3s ease-in;
+
+  
+}
+.button span {
+  font-weight: bolder;
+  /* Dùng để chuyển chữ */
+  /* text-transform: uppercase;   */
+}
+/* --------------------------------------------------------------Main--------------------------------------------------------------- */
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+}
+.Information h1 {
+  font-size: 65px;
+}
+.Information {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+h1 span {
+  background: linear-gradient(to right, #9932cc, #ff69b4);
+  background-clip: text;
+  color: transparent;
+}
+/* .button_wrapper {
+  padding: 12px 25px;
+  border-radius: 50px;
+} */
+
+/* Chọn thẻ p ở vị trí số */
+/* .Information p:nth-child(2){
+  font-size: 100px;
+} */
+/* or */
+/* .Information p:nth-last-of-type(1){
+  font-size: 100px;
+} */
+/* Hoặc dùng cách này nhanh hơn */
+h1 + p {
+  color: rgb(200, 182, 226);
+  font-size: 35px;
+}
+p + p {
+  color: rgb(169, 169, 169);
+  font-size: 20px;
+}
+.readMore {
+  /* màu trong suốt */
+  border: 2px solid rgb(211, 139, 4);
+  background-color: transparent;
+  /* Step 1: ta cần tạo ra các position để cho nó bám theo */
+  position: relative;
+  /* C1: cái này cho cái màu nó hiện lên ko bị tràn ra ngoài khỏi cái nút */
+  overflow: hidden;
+}
+/* làm hiệu ứng( trong TH này là hiệu ứng như tr video: đụng dô xong 
+chuyển màu(hiệu ứng này có tên là hover còn nhiều hiệu ứng khác) */
+.start:hover {
+  background-color: red;
+  /* các hiệu ứng khi trỏ chuột vào */
+  /* transform: scale(1.05); */
+  /* transform: rotate(180deg); */
+  transform: translateY(-10px);
+  /* làm tay độ bóng chỉnh trực tiếp trong web */
+  /* làm web: tìm wen scan box shadow */
+  box-shadow: rgba(239, 235, 7, 0.4) 0px 0px 0px 2px, rgba(198, 241, 2, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+/* cách tạo ra một cái thằng như readMore khi mà trỏ chuột vào nó sẽ 
+có một cái màu chạy ngang qua
+Step1: phía trên dòng 139
+Step2: làm y hệt cái ở dưới( nếu bạn để width là 100% nó sẽ hiện ngay chứ 
+không phải trỏ vô nó mới hiện vì thế nên để ở 0% và xử lí ở bước tiếp theo 
+*/
+.readMore::before{
+  position: absolute;
+  /* sử dụng chô content này để biết màu nó sẽ nằm chỗ nào nên để ko có gì
+  nếu để cái gì vài nó sẽ hiện lên chỗ read more luôn */
+  content: "";
+  top: 0;
+  left: 0;
+  width:  0%;
+  height: 100%;
+  background-color: orange;
+  transition: all 0.4s ease;
+  /* để cho cái màu không đè lên cái chữ */
+  z-index: -1;
+}  
+/* Step3: khúc này quan trọng tức là sau khi mà ta trỏ chuột vào và ta 
+sẽ liên kết đến before và chỉnh sửa width là 100% để nó xuất hiện và cái bóng 
+*/
+.readMore:hover::before{
+  width: 100%;
+  box-shadow: rgba(239, 235, 7, 0.4) 0px 0px 0px 2px, rgba(198, 241, 2, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
+}
+/* ----------------------------------------------------------------Footer---------------------------------------------------------------------- */
+.headfoot:hover{
+  display: flex;
+  transform: scale(1.03);
+}
+
+.button2{  
+  margin-top: 40px;
+  flex-direction: column;
+  border-radius:  50px ;
+  /* font-size: 2rem;  */
+  padding: 30px 50px;
+  background-color: orange;
+  color: white;
+}
+.button3{  
+  margin-top: 5px;
+  flex-direction: column;
+  border-radius:  50px ;
+  /* font-size: 2rem;  */
+  padding: 30px 50px;
+  background-color: orange;
+  color: white;
+}
+.infContact{
+  justify-content: center;
+  align-items: end;
+  display: flex;
+}

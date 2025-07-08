@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- cần tạo lớp container để tất cả các phần tử chỉ nằm trong
+     đúng cái khung này mà ko bị sát viền -->
+    <div class="container">
+      <header>
+        <div class="logo">BLEARNING</div>
+        <nav>
+          <ul class="navigation">
+            <li>
+              <a href="https://www.facebook.com/tung.le.259236" target="_self"
+                >Home</a
+              >
+            </li>
+            <li><a href="">About</a></li>
+            <li><a href="">Project</a></li>
+            <li><a href="">Blog</a></li>
+          </ul>
+        </nav>
+        <div>
+          <!-- dùng win . để chèn icon vào(nhma icon có sẵn) và để lấy icon từ mạng
+           sử dụng web: fontAwesome cdn và fontAwesome -->
+          <!-- fontAwesome cdn lấy link giúp mình có thể gán bất cứ
+            icon nào xong gán lên dòng số 8, bước này rất quan trọng -->
+          <!-- fontAwesome giúp mình chọn icon tùy thích và copy cái thẻ
+             mà nó cung cấp gán vào vị trí bạn muốn -->
+          <button onclick="truyentrang" class="button">
+            <span>Contact me</span>
+            <!--đây là thẻ icon bắt tay  -->
+            <i style="color: white" class="fa-solid fa-handshake"></i>
+          </button>
+        </div>
+      </header>
+      <main>
+        <div class="Information">
+          <h1>I'm. <span>Le Thanh Tung</span></h1>
+          <p>Full Stack Developer</p>
+          <p>Start guide for beginner designers</p>
+          <div class="button_wrapper">
+            <!-- nhận ra button này giống cái trước nên gắn luôn 
+             1 class -->
+            <button class="button start">
+              <i class="fa-solid fa-rocket"></i> Let's Start
+            </button>
+            <button class="button readMore">
+              <i class="fa-brands fa-readme"></i> Read More
+            </button>
+          </div>
+        </div>
+        <div class="image_container">
+          <img src="./img/avt.png" alt="Avatar" />
+        </div>
+      </main>
+      <footer>
+        <div class="headfoot">
+          <button class="button2">
+            <i class="fa-solid fa-palette"></i>
+            <h3>Design Tool</h3>
+            <p>Learn popular design tools</p>
+          </button>
+          <button class="button2">
+            <i class="fa-solid fa-code"></i>
+            <h3>Coding</h3>
+            <p>Basic HTML & CSS</p>
+          </button>
+        </div>
+        <div>
+          <button class="button3">
+            <i class="fa-solid fa-people-group"></i>
+            <h3>Community</h3>
+            <p>Join our design community</p>
+          </button>
+        </div>
+        <div class="infContact">
+            <p>© 2025 UI Beginner's. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
