@@ -17,6 +17,7 @@ cung cấp */
   /* để cân căn giữa phần tử */
   margin: 0 auto;
   padding: 20px;
+  z-index: 2;
 }
 /* khúc này là làm theo cái github(https://github.com/vincentgarreau/particles.js/?tab=readme-ov-file) */
 #particles-js {
@@ -27,6 +28,7 @@ cung cấp */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+  z-index: 0;
 }
 
 body {
@@ -111,6 +113,7 @@ ul a {
   /* Dùng để khi trỏ vào nó sẽ làm hiệu ứng chậm lại cho cái nút đó
    như là: all là chỉ toàn bộ button, trỏ vào hiệu ứng chậm(ease-in) lại 0.3s*/
   transition: all 0.3s ease-in;
+  z-index: 10;
 
   
 }
@@ -172,7 +175,7 @@ p + p {
 }
 /* làm hiệu ứng( trong TH này là hiệu ứng như tr video: đụng dô xong 
 chuyển màu(hiệu ứng này có tên là hover còn nhiều hiệu ứng khác) */
-.start:hover {
+ .start:hover {
   background-color: red;
   /* các hiệu ứng khi trỏ chuột vào */
   /* transform: scale(1.05); */
