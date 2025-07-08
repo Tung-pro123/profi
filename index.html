@@ -14,6 +14,12 @@
     />
   </head>
   <body>
+    <!-- này là cách tạo thêm hiệu ứng đẹp hơn sử dụng js ở phía dưới cùng
+    dòng này được làm theo các bước ở phía bên trong github(https://github.com/vincentgarreau/particles.js/?tab=readme-ov-file)
+     -->
+    <div id="particles-js"></div>
+
+
     <!-- cần tạo lớp container để tất cả các phần tử chỉ nằm trong
      đúng cái khung này mà ko bị sát viền -->
     <div class="container">
@@ -60,35 +66,76 @@
               <i class="fa-brands fa-readme"></i> Read More
             </button>
           </div>
+          <div class="feature">
+            <div class="animation1">
+              <i class="fa-solid fa-palette"></i>
+              <h3>Design Tool</h3>
+              <p>Learn popular design tools</p>
+            </div>
+
+            <div class="animation1">
+              <i class="fa-solid fa-code"></i>
+              <h3>Coding</h3>
+              <p>Basic HTML & CSS</p>
+            </div>
+
+            <div class="animation2">
+              <i class="fa-solid fa-people-group"></i>
+              <h3>Community</h3>
+              <p>Join our design community</p>
+            </div>
+          </div>
         </div>
+
         <div class="image_container">
           <img src="./img/avt.png" alt="Avatar" />
         </div>
       </main>
+
       <footer>
-        <div class="headfoot">
-          <button class="button2">
-            <i class="fa-solid fa-palette"></i>
-            <h3>Design Tool</h3>
-            <p>Learn popular design tools</p>
-          </button>
-          <button class="button2">
-            <i class="fa-solid fa-code"></i>
-            <h3>Coding</h3>
-            <p>Basic HTML & CSS</p>
-          </button>
-        </div>
-        <div>
-          <button class="button3">
-            <i class="fa-solid fa-people-group"></i>
-            <h3>Community</h3>
-            <p>Join our design community</p>
-          </button>
-        </div>
+        <br />
+        <br />
+        <hr />
+        <br />
+        <br />
         <div class="infContact">
-            <p>© 2025 UI Beginner's. All rights reserved.</p>
+          <div class="icon">
+            <a
+              href="https://www.facebook.com/tung.le.259236"
+              style="text-decoration: none; color: inherit"
+            >
+              <i style="font-size: 30px" class="fab fa-facebook-f"></i>
+              </a
+            >
+            <a
+              href="#"
+              style="text-decoration: none; color: inherit"
+            >
+              <i style="font-size: 30px" class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/lttung2201/" 
+            style="text-decoration: none; color: inherit">
+              <i style="font-size: 30px" class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://github.com/Tung-pro123"
+              style="text-decoration: none; color: inherit"
+            >
+              <i style="font-size: 30px" class="fab fa-github"></i>
+            </a>
+          </div>
+          <p>© 2025 UI Beginner's. All rights reserved.</p>
         </div>
       </footer>
     </div>
+
+
+
+
+
+    <!-- để tạo hiệu ứng đẹp nữa ta sẽ sử dụng thư viện và để sử dụng thư viện ta cần cdn đến project của chúng ta -->
+     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/app.js"></script> 
+
   </body>
 </html>
