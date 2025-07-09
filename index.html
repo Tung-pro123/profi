@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -12,13 +12,19 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- này là cách tạo thêm hiệu ứng đẹp hơn sử dụng js ở phía dưới cùng
     dòng này được làm theo các bước ở phía bên trong github(https://github.com/vincentgarreau/particles.js/?tab=readme-ov-file)
      -->
     <div id="particles-js"></div>
-
 
     <!-- cần tạo lớp container để tất cả các phần tử chỉ nằm trong
      đúng cái khung này mà ko bị sát viền -->
@@ -49,6 +55,7 @@
             <!--đây là thẻ icon bắt tay  -->
             <i style="color: white" class="fa-solid fa-handshake"></i>
           </button>
+          <div class="bar"><i class="fa-solid fa-bars"></i></div>
         </div>
       </header>
       <main>
@@ -88,7 +95,7 @@
         </div>
 
         <div class="image_container">
-          <img src="./img/avt.png" alt="Avatar" />
+          <img width="500px" height="600px" src="./img/avt.png" alt="Avatar" />
         </div>
       </main>
 
@@ -103,18 +110,17 @@
             <a
               href="https://www.facebook.com/tung.le.259236"
               style="text-decoration: none; color: inherit"
+              target="_blank"
             >
               <i style="font-size: 30px" class="fab fa-facebook-f"></i>
-              </a
-            >
-            <a
-              href="#"
-              style="text-decoration: none; color: inherit"
-            >
+            </a>
+            <a href="#" style="text-decoration: none; color: inherit">
               <i style="font-size: 30px" class="fab fa-twitter"></i>
             </a>
-            <a href="https://www.instagram.com/lttung2201/" 
-            style="text-decoration: none; color: inherit">
+            <a
+              href="https://www.instagram.com/lttung2201/"
+              style="text-decoration: none; color: inherit"
+            >
               <i style="font-size: 30px" class="fab fa-instagram"></i>
             </a>
             <a
@@ -129,13 +135,14 @@
       </footer>
     </div>
 
-
-
-
+    <!-- Cách để làm font chữ đẹp: lên gg gõ gg fonts: chọn 1 font chữ và lấy link cdn
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> và gắn ở đầu trang
+ .Và sau đó tiếp tục lấy link thuộc tính gắn vào CSS phần body-->
 
     <!-- để tạo hiệu ứng đẹp nữa ta sẽ sử dụng thư viện và để sử dụng thư viện ta cần cdn đến project của chúng ta -->
-     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="/app.js"></script> 
-
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/app.js"></script>
   </body>
 </html>

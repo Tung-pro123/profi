@@ -10,6 +10,8 @@ cung cấp */
   /* sẽ có TH chữ nó bị căng quá và dãn quá dẫn tới bể ảnh hưởng đến
     nội dung vì thế ta cần sủ dụng hàm dưới */
   box-sizing: border-box;
+  /* font chữ đẹp lấy trên web */
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -53,20 +55,29 @@ body {
   justify-content: center;
   position: relative;
   align-items: center;
-  overflow-x:hidden ;
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
 }
-body::before{
-  content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Các gradient màu tùy chỉnh để giống hình */
-    background: radial-gradient(circle at top right, rgba(147, 50, 204, 0.3), transparent 50%),
-                radial-gradient(circle at bottom left, rgba(61, 26, 115, 0.3), transparent 50%);
-    pointer-events: none; /* Đảm bảo không chặn tương tác người dùng */
-    z-index: 1; /* Đặt lớp này trên particles-js nhưng dưới nội dung */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Các gradient màu tùy chỉnh để giống hình */
+  background: radial-gradient(
+      circle at top right,
+      rgba(147, 50, 204, 0.3),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(61, 26, 115, 0.3),
+      transparent 50%
+    );
+  pointer-events: none; /* Đảm bảo không chặn tương tác người dùng */
+  z-index: 1; /* Đặt lớp này trên particles-js nhưng dưới nội dung */
 }
 .logo {
   font-size: 40px;
@@ -114,13 +125,17 @@ ul a {
    như là: all là chỉ toàn bộ button, trỏ vào hiệu ứng chậm(ease-in) lại 0.3s*/
   transition: all 0.3s ease-in;
   z-index: 10;
-
-  
 }
 .button span {
   font-weight: bolder;
   /* Dùng để chuyển chữ */
   /* text-transform: uppercase;   */
+}
+.bar {
+  display: none;
+  font-size: 30px;
+  color: #9932cc;
+  cursor: pointer;
 }
 /* --------------------------------------------------------------Main--------------------------------------------------------------- */
 main {
@@ -141,6 +156,12 @@ h1 span {
   background: linear-gradient(to right, #9932cc, #ff69b4);
   background-clip: text;
   color: transparent;
+}
+
+.image_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* .button_wrapper {
   padding: 12px 25px;
@@ -175,7 +196,7 @@ p + p {
 }
 /* làm hiệu ứng( trong TH này là hiệu ứng như tr video: đụng dô xong 
 chuyển màu(hiệu ứng này có tên là hover còn nhiều hiệu ứng khác) */
- .start:hover {
+.start:hover {
   background-color: red;
   /* các hiệu ứng khi trỏ chuột vào */
   /* transform: scale(1.05); */
@@ -183,7 +204,9 @@ chuyển màu(hiệu ứng này có tên là hover còn nhiều hiệu ứng kh�
   transform: translateY(-10px);
   /* làm tay độ bóng chỉnh trực tiếp trong web */
   /* làm web: tìm wen scan box shadow */
-  box-shadow: rgba(239, 235, 7, 0.4) 0px 0px 0px 2px, rgba(198, 241, 2, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  box-shadow: rgba(239, 235, 7, 0.4) 0px 0px 0px 2px,
+    rgba(198, 241, 2, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 /* cách tạo ra một cái thằng như readMore khi mà trỏ chuột vào nó sẽ 
 có một cái màu chạy ngang qua
@@ -191,153 +214,200 @@ Step1: phía trên dòng 139
 Step2: làm y hệt cái ở dưới( nếu bạn để width là 100% nó sẽ hiện ngay chứ 
 không phải trỏ vô nó mới hiện vì thế nên để ở 0% và xử lí ở bước tiếp theo 
 */
-.readMore::before{
+.readMore::before {
   position: absolute;
   /* sử dụng chô content này để biết màu nó sẽ nằm chỗ nào nên để ko có gì
   nếu để cái gì vài nó sẽ hiện lên chỗ read more luôn */
   content: "";
   top: 0;
   left: 0;
-  width:  0%;
+  width: 0%;
   height: 100%;
   background-color: orange;
   transition: all 0.4s ease;
   /* để cho cái màu không đè lên cái chữ */
   z-index: -1;
-}  
+}
 /* Step3: khúc này quan trọng tức là sau khi mà ta trỏ chuột vào và ta 
 sẽ liên kết đến before và chỉnh sửa width là 100% để nó xuất hiện và cái bóng 
 */
-.readMore:hover::before{
+.readMore:hover::before {
   width: 100%;
-  box-shadow: rgba(239, 235, 7, 0.4) 0px 0px 0px 2px, rgba(198, 241, 2, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-
+  box-shadow: rgba(239, 235, 7, 0.4) 0px 0px 0px 2px,
+    rgba(198, 241, 2, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 /* ----------------------------------------------------------------Footer---------------------------------------------------------------------- */
- /* Container cho 3 card của bạn */
+/* Container cho 3 card của bạn */
 .feature {
-    display: grid; /* Sử dụng CSS Grid cho bố cục 2 cột */
-    grid-template-columns: repeat(2, 1fr); /* 2 cột có độ rộng bằng nhau */
-    gap: 30px; /* Khoảng cách giữa các card */
-    margin-top: 40px; /* Thêm khoảng cách phía trên nếu cần, tùy thuộc vào layout tổng thể */
-    max-width: 600px; /* Giới hạn chiều rộng của khối card, điều chỉnh để khớp với design */
-    width: 100%; /* Đảm bảo chiếm đủ chiều rộng trong giới hạn max-width */
-    box-sizing: border-box; /* Bao gồm padding và border vào kích thước */
+  display: grid; /* Sử dụng CSS Grid cho bố cục 2 cột */
+  grid-template-columns: repeat(2, 1fr); /* 2 cột có độ rộng bằng nhau */
+  gap: 30px; /* Khoảng cách giữa các card */
+  margin-top: 40px; /* Thêm khoảng cách phía trên nếu cần, tùy thuộc vào layout tổng thể */
+  max-width: 600px; /* Giới hạn chiều rộng của khối card, điều chỉnh để khớp với design */
+  width: 100%; /* Đảm bảo chiếm đủ chiều rộng trong giới hạn max-width */
+  box-sizing: border-box; /* Bao gồm padding và border vào kích thước */
 }
 
 /* Định nghĩa style cho từng card (animation1 và animation2) */
 /* Cả animation1 và animation2 đều dùng chung các style card cơ bản */
-.animation1, .animation2 {
-    background: rgba(255, 255, 255, 0.05); /* Nền mờ trong suốt */
-    backdrop-filter: blur(10px); /* Hiệu ứng blur cho nền */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Viền mờ */
-    border-radius: 15px; /* Bo góc */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
-    padding: 30px; /* Khoảng đệm bên trong card */
-    display: flex;
-    flex-direction: column; /* Sắp xếp nội dung theo chiều dọc */
-    justify-content: space-between; /* Đẩy các phần tử ra các phía */
-    cursor: pointer; /* Thay đổi con trỏ khi di chuột qua */
-    transition: transform 0.2s ease-in-out; /* Hiệu ứng di chuyển mượt mà */
-    min-height: 180px; /* Đảm bảo chiều cao tối thiểu để các card đồng đều */
+.animation1,
+.animation2 {
+  background: rgba(255, 255, 255, 0.05); /* Nền mờ trong suốt */
+  backdrop-filter: blur(10px); /* Hiệu ứng blur cho nền */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Viền mờ */
+  border-radius: 15px; /* Bo góc */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+  padding: 30px; /* Khoảng đệm bên trong card */
+  display: flex;
+  flex-direction: column; /* Sắp xếp nội dung theo chiều dọc */
+  justify-content: space-between; /* Đẩy các phần tử ra các phía */
+  cursor: pointer; /* Thay đổi con trỏ khi di chuột qua */
+  transition: transform 0.2s ease-in-out; /* Hiệu ứng di chuyển mượt mà */
+  min-height: 180px; /* Đảm bảo chiều cao tối thiểu để các card đồng đều */
 }
 
 /* Hiệu ứng hover cho các card */
-.animation1:hover, .animation2:hover {
-    transform: translateY(-5px); /* Nâng nhẹ card lên khi di chuột qua */
+.animation1:hover,
+.animation2:hover {
+  transform: translateY(-5px); /* Nâng nhẹ card lên khi di chuột qua */
 }
 
 /* Style cho icon bên trong card */
-.animation1 i, .animation2 i {
-    font-size: 40px; /* Kích thước icon */
-    background: linear-gradient(135deg, #a050d4, #e87b9f); /* Gradient màu như hình */
-    -webkit-background-clip: text; /* Cắt nền theo hình dạng văn bản */
-    -webkit-text-fill-color: transparent; /* Làm cho văn bản trong suốt để nền hiển thị */
-    display: inline-block; /* Quan trọng cho background-clip */
-    margin-bottom: 20px; /* Khoảng cách dưới icon */
+.animation1 i,
+.animation2 i {
+  font-size: 40px; /* Kích thước icon */
+  background: linear-gradient(
+    135deg,
+    #a050d4,
+    #e87b9f
+  ); /* Gradient màu như hình */
+  -webkit-background-clip: text; /* Cắt nền theo hình dạng văn bản */
+  -webkit-text-fill-color: transparent; /* Làm cho văn bản trong suốt để nền hiển thị */
+  display: inline-block; /* Quan trọng cho background-clip */
+  margin-bottom: 20px; /* Khoảng cách dưới icon */
 }
 
 /* Định nghĩa style cho h3 trong card */
-.animation1 h3, .animation2 h3 {
-    margin: 10px 0; /* Khoảng cách trên dưới cho h3 */
-    font-size: 24px; /* Kích thước chữ cho tiêu đề */
-    font-weight: bold; /* Đảm bảo chữ in đậm */
-    color: #ffffff; /* Màu chữ trắng */
+.animation1 h3,
+.animation2 h3 {
+  margin: 10px 0; /* Khoảng cách trên dưới cho h3 */
+  font-size: 24px; /* Kích thước chữ cho tiêu đề */
+  font-weight: bold; /* Đảm bảo chữ in đậm */
+  color: #ffffff; /* Màu chữ trắng */
 }
 
 /* Định nghĩa style cho p trong card */
-.animation1 p, .animation2 p {
-    font-size: 16px; /* Kích thước chữ cho mô tả */
-    color: #bbb; /* Màu chữ mô tả nhạt hơn */
-    line-height: 1.5; /* Khoảng cách dòng */
-    margin: 0; /* Loại bỏ margin mặc định của p */
+.animation1 p,
+.animation2 p {
+  font-size: 16px; /* Kích thước chữ cho mô tả */
+  color: #bbb; /* Màu chữ mô tả nhạt hơn */
+  line-height: 1.5; /* Khoảng cách dòng */
+  margin: 0; /* Loại bỏ margin mặc định của p */
 }
 
 /* Điều chỉnh vị trí cho card "Community" (có class animation2) */
 .animation2 {
-    grid-column: 1 / -1; /* Chiếm toàn bộ chiều rộng của hàng (từ cột 1 đến hết) */
-    /* max-width: calc(50% - 15px); Giới hạn chiều rộng để nó không quá lớn, tương đương 1 cột - gap */
-    /* justify-self: center; Căn giữa card trong hàng của nó */
+  grid-column: 1 / -1; /* Chiếm toàn bộ chiều rộng của hàng (từ cột 1 đến hết) */
+  /* max-width: calc(50% - 15px); Giới hạn chiều rộng để nó không quá lớn, tương đương 1 cột - gap */
+  /* justify-self: center; Căn giữa card trong hàng của nó */
 }
 
 /* ==================================================================== */
 /* Responsive design cho màn hình nhỏ hơn */
 /* ==================================================================== */
-@media (max-width: 768px) {
-    .feature {
-        grid-template-columns: 1fr; /* Chỉ 1 cột */
-        gap: 20px; /* Giảm khoảng cách giữa các card */
-        padding: 0 15px; /* Thêm padding ngang cho container feature */
-    }
 
-    .animation2 {
-        grid-column: auto; /* Reset để nó không chiếm toàn bộ hàng */
-        max-width: 100%; /* Chiếm toàn bộ chiều rộng có sẵn */
-        justify-self: stretch; /* Đảm bảo nó giãn ra hết chiều rộng */
-    }
+/* cách viết ngắn gọn @media (max-width: 768px){....}*/
+@media only screen and (max-width: 768px) {
+  .container header nav,
+  .container header .button {
+    display: none;
+  }
+  .bar {
+    display: block;
+  }
+  main {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  .Information {
+    justify-content: center;
+    align-items: center;
+  }
 
-    .animation1, .animation2 {
-        padding: 25px; /* Giảm padding */
-        min-height: auto; /* Cho phép chiều cao linh hoạt hơn */
-    }
+  .feature {
+    grid-template-columns: 1fr; /* Chỉ 1 cột */
+    gap: 20px; /* Giảm khoảng cách giữa các card */
+    padding: 0 15px; /* Thêm padding ngang cho container feature */
+  }
 
-    .animation1 i, .animation2 i {
-        font-size: 35px; /* Giảm kích thước icon */
-    }
+  .animation2 {
+    grid-column: auto; /* Reset để nó không chiếm toàn bộ hàng */
+    max-width: 100%; /* Chiếm toàn bộ chiều rộng có sẵn */
+    justify-self: stretch; /* Đảm bảo nó giãn ra hết chiều rộng */
+  }
 
-    .animation1 h3, .animation2 h3 {
-        font-size: 20px; /* Giảm kích thước tiêu đề */
-    }
+  .animation1,
+  .animation2 {
+    padding: 25px; /* Giảm padding */
+    min-height: auto; /* Cho phép chiều cao linh hoạt hơn */
+  }
 
-    .animation1 p, .animation2 p {
-        font-size: 15px; /* Giảm kích thước mô tả */
-    }
+  .animation1 i,
+  .animation2 i {
+    font-size: 35px; /* Giảm kích thước icon */
+  }
+
+  .animation1 h3,
+  .animation2 h3 {
+    font-size: 20px; /* Giảm kích thước tiêu đề */
+  }
+
+  .animation1 p,
+  .animation2 p {
+    font-size: 15px; /* Giảm kích thước mô tả */
+  }
 }
-.feature h3{
+/* @media only screen and(max-width: ) {
+  
+} */
+@media (max-width: 615px) {
+  .image_container img {
+    width: 300px;
+    height: fit-content;
+  }
+  .Information h1 {
+    font-size: 50px;
+    /* dùng hàm này để tránh mỗi lần thu nhỏ nữa nó lại xuống hàng */
+    white-space: nowrap;
+  }
+}
+
+.feature h3 {
   margin: 10px 0;
   font-size: 18px;
 }
 h3 {
-    display: block;
-    font-size: 1.17em;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    unicode-bidi: isolate;
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
 }
 
-
-.infContact{
+.infContact {
   flex-direction: column;
   justify-content: end;
   align-items: center;
   display: flex;
   gap: 10px;
 }
-.icon{
+.icon {
   display: flex;
   gap: 20px;
-  
 }
