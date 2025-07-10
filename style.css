@@ -312,6 +312,9 @@ sẽ liên kết đến before và chỉnh sửa width là 100% để nó xuất
   /* max-width: calc(50% - 15px); Giới hạn chiều rộng để nó không quá lớn, tương đương 1 cột - gap */
   /* justify-self: center; Căn giữa card trong hàng của nó */
 }
+.favicon:hover {
+  transform: rotate(180deg);
+}
 
 /* ==================================================================== */
 /* Responsive design cho màn hình nhỏ hơn */
@@ -319,13 +322,11 @@ sẽ liên kết đến before và chỉnh sửa width là 100% để nó xuất
 
 /* cách viết ngắn gọn @media (max-width: 768px){....}*/
 @media only screen and (max-width: 768px) {
-  .container header nav,
+  /* .container header nav, */
   .container header .button {
     display: none;
   }
-  .bar {
-    display: block;
-  }
+  
   main {
     flex-wrap: wrap-reverse;
     justify-content: center;
@@ -335,6 +336,32 @@ sẽ liên kết đến before và chỉnh sửa width là 100% để nó xuất
   .Information {
     justify-content: center;
     align-items: center;
+  }
+  nav {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 70%;
+    height: 100vh;
+    padding: 20px;
+    background-color: blue;
+    transition: all 0,4s ease;
+    z-index: 99;
+  }
+  .container header .bar {
+    position: relative;
+    display: block;
+    z-index: 100;
+  }
+  nav.active{
+    right: 0;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 40px;
+  }
+  nav ul li a{
+    color: yellow;
   }
 
   .feature {
