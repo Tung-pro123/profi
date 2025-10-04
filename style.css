@@ -12,6 +12,7 @@ cung cấp */
   box-sizing: border-box;
   /* font chữ đẹp lấy trên web */
   font-family: "Roboto", sans-serif;
+  color: #b13bff ;
 }
 
 .container {
@@ -35,13 +36,9 @@ cung cấp */
 
 body {
   /*  trang web kiếm màu pha: background linear gradient  */
-  background: #05c302;
-  background: linear-gradient(
-    126deg,
-    rgba(60, 180, 58, 1) 0%,
-    rgba(253, 29, 29, 1) 50%,
-    rgba(252, 243, 69, 1) 100%
-  );
+  background: #090040;
+
+  
   /* sau khi copy xong sài lệnh này để nó ko chia các component màu 
  muốn biết nó ntn thì bỏ lệnh dưới*/
   /* nó có nghĩa là full màn hình chiều cao */
@@ -80,14 +77,15 @@ body::before {
   z-index: 1; /* Đặt lớp này trên particles-js nhưng dưới nội dung */
 }
 .logo {
-  font-size: 40px;
+  font-size: 25px;
+
   /* làm bước này để tạo màu cho chữ nhma sẽ có lỗi nó làm màu cho
   cái background chứ ko phải chứ */
   background: linear-gradient(to right, #9932cc, #ff69b4);
   /* Cần thêm 2 bước để làm màu cho chữ */
   background-clip: text;
-  color: transparent;
-  font-weight: 550px;
+  color:white;
+
 }
 /* -----------------------------------------------Header------------------------------------------------- */
 header {
@@ -103,20 +101,25 @@ header {
   list-style: none;
   gap: 25px;
 }
+
 ul a {
   /* giúp xóa cái dấu gạch chân của thẻ a */
   text-decoration: none;
   /* làm chữ ở thẻ a thành màu trắng bởi vì thẻ a nó có độ ưu tiên hơn */
   color: white;
 }
+li a{
+  opacity:0.7 ;
+}
 .button {
   /* tạo hình cho button */
   padding: 12px 25px;
   border-radius: 50px;
   /* xóa cái khung mặc định của button */
-  border: none;
+  
   outline: none;
-  background-color: rgb(211, 139, 4);
+  background-color: transparent;
+   border: 2px solid rgb(211, 139, 4);
   color: white;
   /* chức năng khi đặt con trỏ vào người dùng có thể biết là chỗ đó 
   click được  */
@@ -127,10 +130,12 @@ ul a {
   z-index: 10;
 }
 .button span {
-  font-weight: bolder;
+  font-weight: bold;
   /* Dùng để chuyển chữ */
   /* text-transform: uppercase;   */
+  color:white;
 }
+
 .bar {
   display: none;
   font-size: 30px;
@@ -140,9 +145,10 @@ ul a {
 /* --------------------------------------------------------------Main--------------------------------------------------------------- */
 main {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-top: 100px;
+  gap:50px;
 }
 .Information h1 {
   font-size: 65px;
@@ -155,13 +161,27 @@ main {
 h1 span {
   background: linear-gradient(to right, #9932cc, #ff69b4);
   background-clip: text;
-  color: transparent;
+  color: white;
+  /* color: transparent; */
+}
+.logo h1 {
+  opacity: 0.7;
+  /* text-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px; */
 }
 
 .image_container {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* width:700px; */
+  /* height: 100vh; */
+  /* background-color: #471396; */
+  /* width:700px; */
+  height: 100vh;
+  position: relative;
+  right: 10px;
+  padding-top:200px;
+
 }
 /* .button_wrapper {
   padding: 12px 25px;
@@ -173,7 +193,7 @@ h1 span {
   font-size: 100px;
 } */
 /* or */
-/* .Information p:nth-last-of-type(1){
+/* .Information p:nth-last-of-type(1){ 
   font-size: 100px;
 } */
 /* Hoặc dùng cách này nhanh hơn */
@@ -281,7 +301,8 @@ sẽ liên kết đến before và chỉnh sửa width là 100% để nó xuất
     135deg,
     #a050d4,
     #e87b9f
-  ); /* Gradient màu như hình */
+  ); 
+  /* Gradient màu như hình */
   -webkit-background-clip: text; /* Cắt nền theo hình dạng văn bản */
   -webkit-text-fill-color: transparent; /* Làm cho văn bản trong suốt để nền hiển thị */
   display: inline-block; /* Quan trọng cho background-clip */
@@ -326,7 +347,7 @@ sẽ liên kết đến before và chỉnh sửa width là 100% để nó xuất
   .container header .button {
     display: none;
   }
-  
+
   main {
     flex-wrap: wrap-reverse;
     justify-content: center;
@@ -344,8 +365,8 @@ sẽ liên kết đến before và chỉnh sửa width là 100% để nó xuất
     width: 70%;
     height: 100vh;
     padding: 20px;
-    background-color: blue;
-    transition: all 0,4s ease;
+    background-color: white;
+    transition: all 0, 4s ease;
     z-index: 99;
   }
   .container header .bar {
@@ -353,15 +374,17 @@ sẽ liên kết đến before và chỉnh sửa width là 100% để nó xuất
     display: block;
     z-index: 100;
   }
-  nav.active{
+  nav.active {
     right: 0;
   }
   nav ul {
     flex-direction: column;
     gap: 40px;
   }
-  nav ul li a{
+  nav ul li a {
     color: yellow;
+    font-style: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
 
   .feature {
